@@ -21,14 +21,17 @@ public class Controller extends HttpServlet {
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+			throws ServletException, IOException {		
+		String action = request.getServletPath();
+		System.out.println(action);
+		if (action.equals("/main")) {
+			contatos(request, response);
+		}
 		
-//		String action = request.getServletPath();
-//		System.out.println(action);
-		// teste de conexão
-		 dao.testeConexao();
+	}
+	protected void contatos(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.sendRedirect("agenda.jsp");
 	}
 
 }
