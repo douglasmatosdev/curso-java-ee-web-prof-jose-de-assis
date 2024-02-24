@@ -24,13 +24,12 @@ public class Controller extends HttpServlet {
 		super();
 	}
 
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String action = request.getServletPath();
-		
+
 		System.out.println(action);
-		
+
 		if (action.equals("/main")) {
 			contatos(request, response);
 		} else if (action.equals("/insert")) {
@@ -99,13 +98,23 @@ public class Controller extends HttpServlet {
 
 		// Executar oi método selecionarContato (DAO)
 		dao.selecionarContato(contato);
-		
+
 		// Teste de recebimento
-		System.out.println("listarContato()");
-		System.out.println(contato.getIdcon());
-		System.out.println(contato.getNome());
-		System.out.println(contato.getFone());
-		System.out.println(contato.getEmail());
+//		System.out.println("listarContato()");
+//		System.out.println(contato.getIdcon());
+//		System.out.println(contato.getNome());
+//		System.out.println(contato.getFone());
+//		System.out.println(contato.getEmail());
+
+		// Setar os atributos do formulário com o conteúdo JavaBeans
+		request.setAttribute("idcon", contato.getIdcon());
+		request.setAttribute("nome", contato.getNome());
+		request.setAttribute("fone", contato.getFone());
+		request.setAttribute("email", contato.getEmail());
+
+		// Encaminhar ao documento editar.jsp
+		RequestDispatcher rd = request.getRequestDispatcher("editar.jsp");
+		rd.forward(request, response);
 	}
 
 }
