@@ -22,13 +22,14 @@ public class Controller extends HttpServlet {
 
 	public Controller() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String action = request.getServletPath();
+		
 		System.out.println(action);
+		
 		if (action.equals("/main")) {
 			contatos(request, response);
 		} else if (action.equals("/insert")) {
@@ -55,12 +56,12 @@ public class Controller extends HttpServlet {
 		rd.forward(request, response);
 
 		// Teste de recebimento da lista
-//		for (int i = 0; i < lista.size(); i++) {
-//			System.out.println(lista.get(i).getIdcon());
-//			System.out.println(lista.get(i).getNome());
-//			System.out.println(lista.get(i).getFone());
-//			System.out.println(lista.get(i).getEmail());
-//		}
+		for (int i = 0; i < lista.size(); i++) {
+			System.out.println(lista.get(i).getIdcon());
+			System.out.println(lista.get(i).getNome());
+			System.out.println(lista.get(i).getFone());
+			System.out.println(lista.get(i).getEmail());
+		}
 	}
 
 	// Novo contato
@@ -97,6 +98,12 @@ public class Controller extends HttpServlet {
 
 		// Executar oi método selecionarContato (DAO)
 		dao.selecionarContato(contato);
+		
+		// Teste de recebimento
+		System.out.println(contato.getIdcon());
+		System.out.println(contato.getNome());
+		System.out.println(contato.getFone());
+		System.out.println(contato.getEmail());
 	}
 
 }
