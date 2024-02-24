@@ -24,6 +24,7 @@ public class Controller extends HttpServlet {
 		super();
 	}
 
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String action = request.getServletPath();
@@ -56,12 +57,12 @@ public class Controller extends HttpServlet {
 		rd.forward(request, response);
 
 		// Teste de recebimento da lista
-		for (int i = 0; i < lista.size(); i++) {
-			System.out.println(lista.get(i).getIdcon());
-			System.out.println(lista.get(i).getNome());
-			System.out.println(lista.get(i).getFone());
-			System.out.println(lista.get(i).getEmail());
-		}
+//		for (int i = 0; i < lista.size(); i++) {
+//			System.out.println(lista.get(i).getIdcon());
+//			System.out.println(lista.get(i).getNome());
+//			System.out.println(lista.get(i).getFone());
+//			System.out.println(lista.get(i).getEmail());
+//		}
 	}
 
 	// Novo contato
@@ -100,6 +101,7 @@ public class Controller extends HttpServlet {
 		dao.selecionarContato(contato);
 		
 		// Teste de recebimento
+		System.out.println("listarContato()");
 		System.out.println(contato.getIdcon());
 		System.out.println(contato.getNome());
 		System.out.println(contato.getFone());

@@ -107,13 +107,14 @@ public class DAO {
 			PreparedStatement pst = con.prepareStatement(read2);
 			pst.setString(1, contato.getIdcon());
 			ResultSet rs = pst.executeQuery();
+			
 
 			while (rs.next()) {
 				// Setar as variáveis JavaBeans
 				contato.setIdcon(rs.getString(1));
-				contato.setIdcon(rs.getString(2));
-				contato.setIdcon(rs.getString(3));
-				contato.setIdcon(rs.getString(4));
+				contato.setNome(rs.getString(2));
+				contato.setFone(rs.getString(3));
+				contato.setEmail(rs.getString(4));
 			}
 			con.close();
 
