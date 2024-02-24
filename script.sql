@@ -9,3 +9,9 @@ create table contatos(
 );
 show tables;
 describe contatos;
+
+/* CRUD CREATE	*/
+insert into contatos (nome, fone, email) values ("Bill Gates", '111111111', 'bill@email.com');
+
+/* CRUD READ */
+select * from contatos;
