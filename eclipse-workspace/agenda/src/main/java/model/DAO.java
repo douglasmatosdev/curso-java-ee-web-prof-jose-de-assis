@@ -91,6 +91,7 @@ public class DAO {
 				contatos.add(new JavaBeans(idcon, nome, fone, email));
 			}
 
+			con.close();
 		} catch (Exception e) {
 			System.out.println(e);
 		}
@@ -107,7 +108,6 @@ public class DAO {
 			PreparedStatement pst = con.prepareStatement(read2);
 			pst.setString(1, contato.getIdcon());
 			ResultSet rs = pst.executeQuery();
-			
 
 			while (rs.next()) {
 				// Setar as variáveis JavaBeans
@@ -121,5 +121,26 @@ public class DAO {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
+	}
+
+	// editar o contato
+	public void alterarContato(JavaBeans contato) {
+		String create = "update contatos set nome=?, fone=?, email=? where idcon=?";
+
+		try {
+			Connection con = conectar();
+			PreparedStatement pst = con.prepareStatement(create);
+			pst.setString(1, contato.getIdcon());
+			pst.setString(2, contato.getNome());
+			pst.setString(3, contato.getFone());
+			pst.setString(4, contato.getEmail());
+			
+			pst.executeUpdate();
+
+			con.close();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+
 	}
 }

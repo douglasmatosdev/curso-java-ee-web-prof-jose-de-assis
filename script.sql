@@ -16,3 +16,8 @@ insert into contatos (nome, fone, email) values ("Bill Gates", '111111111', 'bil
 /* CRUD READ */
 select * from contatos;
 select * from contatos order by nome;
+select * from contatos where idcon = 2;
+
+/* CRUD UPDATE */
+UPDATE contatos SET nome="douglas matos" WHERE idcon=2;
+UPDATE contatos SET nome="Douglas Matos da Silva", fone="0909090909", email="doug@email.com" WHERE idcon=2;
