@@ -91,9 +91,12 @@ public class Controller extends HttpServlet {
 		// Recebimetnod o id do contato que será editado
 		String idcon = request.getParameter("idcon");
 		// System.out.println(idcon); // teste
-		
+
 		// Setar a variável JavaBeans
 		contato.setIdcon(idcon);
+
+		// Executar oi método selecionarContato (DAO)
+		dao.selecionarContato(contato);
 	}
 
 }

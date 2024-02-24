@@ -96,4 +96,20 @@ public class DAO {
 		}
 		return contatos;
 	}
+
+	/* CRUD UPDATE */
+	// Selecionar o contato
+	public void selecionarContato(JavaBeans contato) {
+		String read2 = "select * from contatos where idcon = ?";
+
+		try {
+			Connection con = conectar();
+			PreparedStatement pst = con.prepareStatement(read2);
+			pst.setString(1, contato.getIdcon());
+			ResultSet rs = pst.executeQuery();
+
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
 }
