@@ -1,5 +1,5 @@
 /**
- * Falidação de formulário
+ * Validação de formulário
  * @author Douglas Matos da Silva
  */
 
