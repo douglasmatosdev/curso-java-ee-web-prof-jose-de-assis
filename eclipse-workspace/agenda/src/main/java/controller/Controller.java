@@ -39,7 +39,7 @@ public class Controller extends HttpServlet {
 		if (action.equals("/main")) {
 			contatos(request, response);
 		} else if (action.equals("/insert")) {
-			novoContato(request, response);
+			adicionarContar(request, response);
 		} else if (action.equals("/select")) {
 			listarContato(request, response);
 		} else if (action.equals("/update")) {
@@ -77,7 +77,7 @@ public class Controller extends HttpServlet {
 	}
 
 	// Novo contato
-	protected void novoContato(HttpServletRequest request, HttpServletResponse response)
+	protected void adicionarContar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// Teste de recebimento dos dados do formulário
 		System.out.println(request.getParameter("nome"));
