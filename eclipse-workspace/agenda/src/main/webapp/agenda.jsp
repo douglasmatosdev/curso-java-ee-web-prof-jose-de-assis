@@ -6,13 +6,6 @@
 <%
 @SuppressWarnings("unchecked")
 ArrayList<JavaBeans> lista = (ArrayList<JavaBeans>) request.getAttribute("contatos");
-// Teste de recebimento da lista
-//for (int i = 0; i < lista.size(); i++) {
-//	out.println(lista.get(i).getIdcon());
-//	out.println(lista.get(i).getNome());
-// 	out.println(lista.get(i).getFone());
-// 	out.println(lista.get(i).getEmail());
-// }
 %>
 <!DOCTYPE html>
 <html lang="pt-br">

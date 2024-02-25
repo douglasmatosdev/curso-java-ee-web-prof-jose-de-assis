@@ -11,12 +11,12 @@ function validar() {
 		alert("Preencha o campo nome")
 		frmContato.nome.focus()
 		return false
-		
+
 	} else if (fone === "") {
 		alert("Preencha o campo fone")
 		frmContato.fone.focus()
 		return false
-		
+
 	} else {
 		document.forms["frmContato"].submit()
 	}
